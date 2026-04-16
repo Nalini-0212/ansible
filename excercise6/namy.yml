@@ -1,0 +1,23 @@
+---
+- name: Provisioning of servers
+  hosts: all
+  become: yes
+  gather_facts: True
+
+  tasks:
+    - name: create group
+      ansible.builtin.group:
+        name: "{{item}}"
+        state: present
+      loop:
+        - wheel
+        - orange
+    - name: add users
+      ansible.builtin.user:
+        name: "{{item.name}}"
+        state: present
+        group: "{{item.group}}"
+      loop:
+        - {name: 'user1', group: 'wheel'}
+        - {name: 'user2', group: 'orange'}
+
