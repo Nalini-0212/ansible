@@ -1,0 +1,24 @@
+---
+- name: Understanding users
+  hosts: all
+  become: yes
+  #gather_facts: False
+  tasks:
+    - name: Print OS name
+      debug:
+        var: ansible_facts["distribution"]
+    - name: Print SE linux Mode
+      debug:
+        var: ansible_selinux.mode
+    - name: Print OS memory total
+      debug:
+        var: ansible_memory_mb.real.total
+    - name: Print OS memory free
+      debug:
+        var: ansible_memory_mb.real.free
+    - name: Print OS memory used
+      debug:
+        var: ansible_memory_mb.real.used
+
+
+    

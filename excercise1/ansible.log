@@ -1,0 +1,572 @@
+2026-04-16 05:34:28,549 p=2887 u=ubuntu n=ansible WARNING| [WARNING]: Invalid characters were found in group names but not replaced, use -vvvv to see details
+
+2026-04-16 05:34:28,758 p=2887 u=ubuntu n=ansible INFO| PLAY [dbserver setup] ******************************************************************************************************************************************************
+2026-04-16 05:34:28,767 p=2887 u=ubuntu n=ansible INFO| TASK [Gathering Facts] *****************************************************************************************************************************************************
+2026-04-16 05:34:31,045 p=2887 u=ubuntu n=ansible WARNING| [WARNING]: Host 'db01' is using the discovered Python interpreter at '/usr/bin/python3.12', but future installation of another Python interpreter could cause a different interpreter to be discovered. See https://docs.ansible.com/ansible-core/2.20/reference_appendices/interpreter_discovery.html for more information.
+
+2026-04-16 05:34:31,045 p=2887 u=ubuntu n=ansible INFO| ok: [db01]
+2026-04-16 05:34:31,051 p=2887 u=ubuntu n=ansible INFO| TASK [Install mariadb server] **********************************************************************************************************************************************
+2026-04-16 05:34:31,847 p=2887 u=ubuntu n=ansible ERROR| [ERROR]: Task failed: Module failed: No package matching 'mariadb-server' is available
+Origin: /home/ubuntu/vprofile/excercise/db.yml:6:7
+
+4   become: yes
+5   tasks:
+6     - name: Install mariadb server
+        ^ column 7
+
+
+2026-04-16 05:34:31,848 p=2887 u=ubuntu n=ansible INFO| fatal: [db01]: FAILED! => {"changed": false, "msg": "No package matching 'mariadb-server' is available"}
+2026-04-16 05:34:31,849 p=2887 u=ubuntu n=ansible INFO| PLAY RECAP *****************************************************************************************************************************************************************
+2026-04-16 05:34:31,849 p=2887 u=ubuntu n=ansible INFO| db01                       : ok=1    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2026-04-16 05:36:01,116 p=2919 u=ubuntu n=ansible WARNING| [WARNING]: Invalid characters were found in group names but not replaced, use -vvvv to see details
+
+2026-04-16 05:36:01,438 p=2919 u=ubuntu n=ansible INFO| PLAY [dbserver setup] ******************************************************************************************************************************************************
+2026-04-16 05:36:01,460 p=2919 u=ubuntu n=ansible INFO| TASK [Gathering Facts] *****************************************************************************************************************************************************
+2026-04-16 05:36:04,458 p=2919 u=ubuntu n=ansible WARNING| [WARNING]: Host 'db01' is using the discovered Python interpreter at '/usr/bin/python3.12', but future installation of another Python interpreter could cause a different interpreter to be discovered. See https://docs.ansible.com/ansible-core/2.20/reference_appendices/interpreter_discovery.html for more information.
+
+2026-04-16 05:36:04,458 p=2919 u=ubuntu n=ansible INFO| ok: [db01]
+2026-04-16 05:36:04,464 p=2919 u=ubuntu n=ansible INFO| TASK [Install mariadb server] **********************************************************************************************************************************************
+2026-04-16 05:36:46,806 p=2919 u=ubuntu n=ansible INFO| changed: [db01]
+2026-04-16 05:36:46,812 p=2919 u=ubuntu n=ansible INFO| TASK [Start mariadb service] ***********************************************************************************************************************************************
+2026-04-16 05:36:47,816 p=2919 u=ubuntu n=ansible INFO| ok: [db01]
+2026-04-16 05:36:47,822 p=2919 u=ubuntu n=ansible INFO| TASK [install python3-pymysql] *********************************************************************************************************************************************
+2026-04-16 05:36:53,088 p=2919 u=ubuntu n=ansible INFO| changed: [db01]
+2026-04-16 05:36:53,093 p=2919 u=ubuntu n=ansible INFO| TASK [create a database name "vprofile"] ***********************************************************************************************************************************
+2026-04-16 05:36:53,792 p=2919 u=ubuntu n=ansible INFO| changed: [db01]
+2026-04-16 05:36:53,798 p=2919 u=ubuntu n=ansible INFO| TASK [create a database user "accounts" in vprofile database] **************************************************************************************************************
+2026-04-16 05:36:54,465 p=2919 u=ubuntu n=ansible INFO| changed: [db01]
+2026-04-16 05:36:54,467 p=2919 u=ubuntu n=ansible INFO| PLAY RECAP *****************************************************************************************************************************************************************
+2026-04-16 05:36:54,467 p=2919 u=ubuntu n=ansible INFO| db01                       : ok=6    changed=4    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2026-04-16 05:37:02,260 p=2975 u=ubuntu n=ansible WARNING| [WARNING]: Invalid characters were found in group names but not replaced, use -vvvv to see details
+
+2026-04-16 05:37:02,639 p=2975 u=ubuntu n=ansible INFO| PLAY [dbserver setup] ******************************************************************************************************************************************************
+2026-04-16 05:37:02,650 p=2975 u=ubuntu n=ansible INFO| TASK [Gathering Facts] *****************************************************************************************************************************************************
+2026-04-16 05:37:04,394 p=2975 u=ubuntu n=ansible WARNING| [WARNING]: Host 'db01' is using the discovered Python interpreter at '/usr/bin/python3.12', but future installation of another Python interpreter could cause a different interpreter to be discovered. See https://docs.ansible.com/ansible-core/2.20/reference_appendices/interpreter_discovery.html for more information.
+
+2026-04-16 05:37:04,394 p=2975 u=ubuntu n=ansible INFO| ok: [db01]
+2026-04-16 05:37:04,400 p=2975 u=ubuntu n=ansible INFO| TASK [Install mariadb server] **********************************************************************************************************************************************
+2026-04-16 05:37:14,282 p=2975 u=ubuntu n=ansible INFO| ok: [db01]
+2026-04-16 05:37:14,288 p=2975 u=ubuntu n=ansible INFO| TASK [Start mariadb service] ***********************************************************************************************************************************************
+2026-04-16 05:37:15,201 p=2975 u=ubuntu n=ansible INFO| ok: [db01]
+2026-04-16 05:37:15,206 p=2975 u=ubuntu n=ansible INFO| TASK [install python3-pymysql] *********************************************************************************************************************************************
+2026-04-16 05:37:16,383 p=2975 u=ubuntu n=ansible INFO| ok: [db01]
+2026-04-16 05:37:16,388 p=2975 u=ubuntu n=ansible INFO| TASK [create a database name "vprofile"] ***********************************************************************************************************************************
+2026-04-16 05:37:16,983 p=2975 u=ubuntu n=ansible INFO| ok: [db01]
+2026-04-16 05:37:16,988 p=2975 u=ubuntu n=ansible INFO| TASK [create a database user "accounts" in vprofile database] **************************************************************************************************************
+2026-04-16 05:37:17,635 p=2975 u=ubuntu n=ansible INFO| ok: [db01]
+2026-04-16 05:37:17,636 p=2975 u=ubuntu n=ansible INFO| PLAY RECAP *****************************************************************************************************************************************************************
+2026-04-16 05:37:17,637 p=2975 u=ubuntu n=ansible INFO| db01                       : ok=6    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2026-04-16 05:43:58,473 p=3090 u=ubuntu n=ansible WARNING| [WARNING]: Invalid characters were found in group names but not replaced, use -vvvv to see details
+
+2026-04-16 05:43:58,765 p=3090 u=ubuntu n=ansible ERROR| [ERROR]: YAML parsing failed: Values starting with a quote must end with the same quote, and not contain that quote.
+Origin: /home/ubuntu/vprofile/excercise/db.yml:38:14
+
+36     - name: name of database created
+37       debug:
+38         msg: " The name of database created is "{{dbname}}" "
+                ^ column 14
+
+
+For example:
+
+    raw: "foo" in "bar"
+
+Should be:
+
+    raw: '"foo" in "bar"'
+
+
+2026-04-16 05:44:56,392 p=3098 u=ubuntu n=ansible WARNING| [WARNING]: Invalid characters were found in group names but not replaced, use -vvvv to see details
+
+2026-04-16 05:44:56,618 p=3098 u=ubuntu n=ansible INFO| PLAY [dbserver setup] ******************************************************************************************************************************************************
+2026-04-16 05:44:56,634 p=3098 u=ubuntu n=ansible INFO| TASK [Gathering Facts] *****************************************************************************************************************************************************
+2026-04-16 05:44:58,887 p=3098 u=ubuntu n=ansible WARNING| [WARNING]: Host 'db01' is using the discovered Python interpreter at '/usr/bin/python3.12', but future installation of another Python interpreter could cause a different interpreter to be discovered. See https://docs.ansible.com/ansible-core/2.20/reference_appendices/interpreter_discovery.html for more information.
+
+2026-04-16 05:44:58,887 p=3098 u=ubuntu n=ansible INFO| ok: [db01]
+2026-04-16 05:44:58,893 p=3098 u=ubuntu n=ansible INFO| TASK [Install mariadb server] **********************************************************************************************************************************************
+2026-04-16 05:45:20,176 p=3098 u=ubuntu n=ansible INFO| ok: [db01]
+2026-04-16 05:45:20,182 p=3098 u=ubuntu n=ansible INFO| TASK [Start mariadb service] ***********************************************************************************************************************************************
+2026-04-16 05:45:21,073 p=3098 u=ubuntu n=ansible INFO| ok: [db01]
+2026-04-16 05:45:21,078 p=3098 u=ubuntu n=ansible INFO| TASK [install python3-pymysql] *********************************************************************************************************************************************
+2026-04-16 05:45:22,252 p=3098 u=ubuntu n=ansible INFO| ok: [db01]
+2026-04-16 05:45:22,257 p=3098 u=ubuntu n=ansible INFO| TASK [create a database name] **********************************************************************************************************************************************
+2026-04-16 05:45:22,861 p=3098 u=ubuntu n=ansible INFO| ok: [db01]
+2026-04-16 05:45:22,867 p=3098 u=ubuntu n=ansible INFO| TASK [create a database] ***************************************************************************************************************************************************
+2026-04-16 05:45:23,524 p=3098 u=ubuntu n=ansible INFO| changed: [db01]
+2026-04-16 05:45:23,530 p=3098 u=ubuntu n=ansible INFO| TASK [name of database created] ********************************************************************************************************************************************
+2026-04-16 05:45:23,552 p=3098 u=ubuntu n=ansible INFO| ok: [db01] => {
+    "msg": "The name of database created is \"vprofile\""
+}
+2026-04-16 05:45:23,556 p=3098 u=ubuntu n=ansible INFO| TASK [name of database user created] ***************************************************************************************************************************************
+2026-04-16 05:45:23,577 p=3098 u=ubuntu n=ansible INFO| ok: [db01] => {
+    "dbuser": "accounts"
+}
+2026-04-16 05:45:23,578 p=3098 u=ubuntu n=ansible INFO| PLAY RECAP *****************************************************************************************************************************************************************
+2026-04-16 05:45:23,579 p=3098 u=ubuntu n=ansible INFO| db01                       : ok=8    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2026-04-16 05:45:55,310 p=3159 u=ubuntu n=ansible WARNING| [WARNING]: Invalid characters were found in group names but not replaced, use -vvvv to see details
+
+2026-04-16 05:45:55,518 p=3159 u=ubuntu n=ansible INFO| PLAY [dbserver setup] ******************************************************************************************************************************************************
+2026-04-16 05:45:55,526 p=3159 u=ubuntu n=ansible INFO| TASK [Gathering Facts] *****************************************************************************************************************************************************
+2026-04-16 05:45:56,906 p=3159 u=ubuntu n=ansible WARNING| [WARNING]: Host 'db01' is using the discovered Python interpreter at '/usr/bin/python3.12', but future installation of another Python interpreter could cause a different interpreter to be discovered. See https://docs.ansible.com/ansible-core/2.20/reference_appendices/interpreter_discovery.html for more information.
+
+2026-04-16 05:45:56,906 p=3159 u=ubuntu n=ansible INFO| ok: [db01]
+2026-04-16 05:45:56,912 p=3159 u=ubuntu n=ansible INFO| TASK [Install mariadb server] **********************************************************************************************************************************************
+2026-04-16 05:49:32,911 p=3185 u=ubuntu n=ansible WARNING| [WARNING]: Invalid characters were found in group names but not replaced, use -vvvv to see details
+
+2026-04-16 05:49:33,114 p=3185 u=ubuntu n=ansible INFO| PLAY [dbserver setup] ******************************************************************************************************************************************************
+2026-04-16 05:49:33,122 p=3185 u=ubuntu n=ansible INFO| TASK [Gathering Facts] *****************************************************************************************************************************************************
+2026-04-16 05:49:35,157 p=3185 u=ubuntu n=ansible WARNING| [WARNING]: Host 'db01' is using the discovered Python interpreter at '/usr/bin/python3.12', but future installation of another Python interpreter could cause a different interpreter to be discovered. See https://docs.ansible.com/ansible-core/2.20/reference_appendices/interpreter_discovery.html for more information.
+
+2026-04-16 05:49:35,157 p=3185 u=ubuntu n=ansible INFO| ok: [db01]
+2026-04-16 05:49:35,163 p=3185 u=ubuntu n=ansible INFO| TASK [Install mariadb server] **********************************************************************************************************************************************
+2026-04-16 05:53:19,553 p=3185 u=ubuntu n=ansible INFO| ok: [db01]
+2026-04-16 05:53:19,559 p=3185 u=ubuntu n=ansible INFO| TASK [Start mariadb service] ***********************************************************************************************************************************************
+2026-04-16 05:53:20,459 p=3185 u=ubuntu n=ansible INFO| ok: [db01]
+2026-04-16 05:53:20,464 p=3185 u=ubuntu n=ansible INFO| TASK [install python3-pymysql] *********************************************************************************************************************************************
+2026-04-16 05:53:21,623 p=3185 u=ubuntu n=ansible INFO| ok: [db01]
+2026-04-16 05:53:21,628 p=3185 u=ubuntu n=ansible INFO| TASK [create a database name] **********************************************************************************************************************************************
+2026-04-16 05:53:22,238 p=3185 u=ubuntu n=ansible INFO| ok: [db01]
+2026-04-16 05:53:22,244 p=3185 u=ubuntu n=ansible INFO| TASK [create a database] ***************************************************************************************************************************************************
+2026-04-16 05:53:22,886 p=3185 u=ubuntu n=ansible INFO| ok: [db01]
+2026-04-16 05:53:22,892 p=3185 u=ubuntu n=ansible INFO| TASK [print value of dbout variable] ***************************************************************************************************************************************
+2026-04-16 05:53:22,912 p=3185 u=ubuntu n=ansible INFO| ok: [db01] => {
+    "dbout": {
+        "attributes": {},
+        "changed": false,
+        "failed": false,
+        "msg": "User unchanged",
+        "password_changed": false,
+        "user": "accounts"
+    }
+}
+2026-04-16 05:53:22,917 p=3185 u=ubuntu n=ansible INFO| TASK [name of database created] ********************************************************************************************************************************************
+2026-04-16 05:53:22,938 p=3185 u=ubuntu n=ansible INFO| ok: [db01] => {
+    "msg": "The name of database created is \"vprofile\""
+}
+2026-04-16 05:53:22,942 p=3185 u=ubuntu n=ansible INFO| TASK [name of database user created] ***************************************************************************************************************************************
+2026-04-16 05:53:22,962 p=3185 u=ubuntu n=ansible INFO| ok: [db01] => {
+    "dbuser": "accounts"
+}
+2026-04-16 05:53:22,963 p=3185 u=ubuntu n=ansible INFO| PLAY RECAP *****************************************************************************************************************************************************************
+2026-04-16 05:53:22,963 p=3185 u=ubuntu n=ansible INFO| db01                       : ok=9    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2026-04-16 05:58:27,215 p=3261 u=ubuntu n=ansible WARNING| [WARNING]: Invalid characters were found in group names but not replaced, use -vvvv to see details
+
+2026-04-16 05:58:27,423 p=3261 u=ubuntu n=ansible INFO| PLAY [dbserver setup] ******************************************************************************************************************************************************
+2026-04-16 05:58:27,431 p=3261 u=ubuntu n=ansible INFO| TASK [Gathering Facts] *****************************************************************************************************************************************************
+2026-04-16 05:58:29,589 p=3261 u=ubuntu n=ansible WARNING| [WARNING]: Host 'db01' is using the discovered Python interpreter at '/usr/bin/python3.12', but future installation of another Python interpreter could cause a different interpreter to be discovered. See https://docs.ansible.com/ansible-core/2.20/reference_appendices/interpreter_discovery.html for more information.
+
+2026-04-16 05:58:29,590 p=3261 u=ubuntu n=ansible INFO| ok: [db01]
+2026-04-16 05:58:29,596 p=3261 u=ubuntu n=ansible INFO| TASK [Install mariadb server] **********************************************************************************************************************************************
+2026-04-16 05:58:49,504 p=3261 u=ubuntu n=ansible INFO| ok: [db01]
+2026-04-16 05:58:49,510 p=3261 u=ubuntu n=ansible INFO| TASK [Start mariadb service] ***********************************************************************************************************************************************
+2026-04-16 05:58:50,383 p=3261 u=ubuntu n=ansible INFO| ok: [db01]
+2026-04-16 05:58:50,388 p=3261 u=ubuntu n=ansible INFO| TASK [install python3-pymysql] *********************************************************************************************************************************************
+2026-04-16 05:58:51,560 p=3261 u=ubuntu n=ansible INFO| ok: [db01]
+2026-04-16 05:58:51,566 p=3261 u=ubuntu n=ansible INFO| TASK [create a database name] **********************************************************************************************************************************************
+2026-04-16 05:58:52,169 p=3261 u=ubuntu n=ansible INFO| ok: [db01]
+2026-04-16 05:58:52,175 p=3261 u=ubuntu n=ansible INFO| TASK [create a database] ***************************************************************************************************************************************************
+2026-04-16 05:58:52,816 p=3261 u=ubuntu n=ansible INFO| ok: [db01]
+2026-04-16 05:58:52,821 p=3261 u=ubuntu n=ansible INFO| TASK [print value of dbout variable] ***************************************************************************************************************************************
+2026-04-16 05:58:52,842 p=3261 u=ubuntu n=ansible INFO| ok: [db01] => {
+    "dbout": {
+        "attributes": {},
+        "changed": false,
+        "failed": false,
+        "msg": "User unchanged",
+        "password_changed": false,
+        "user": "accounts"
+    }
+}
+2026-04-16 05:58:52,846 p=3261 u=ubuntu n=ansible INFO| TASK [name of database created] ********************************************************************************************************************************************
+2026-04-16 05:58:52,867 p=3261 u=ubuntu n=ansible INFO| ok: [db01] => {
+    "msg": "The name of database created is \"vprofile\""
+}
+2026-04-16 05:58:52,871 p=3261 u=ubuntu n=ansible INFO| TASK [name of database user created] ***************************************************************************************************************************************
+2026-04-16 05:58:52,891 p=3261 u=ubuntu n=ansible INFO| ok: [db01] => {
+    "dbuser": "accounts"
+}
+2026-04-16 05:58:52,892 p=3261 u=ubuntu n=ansible INFO| PLAY RECAP *****************************************************************************************************************************************************************
+2026-04-16 05:58:52,892 p=3261 u=ubuntu n=ansible INFO| db01                       : ok=9    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2026-04-16 06:04:23,219 p=3348 u=ubuntu n=ansible WARNING| [WARNING]: Invalid characters were found in group names but not replaced, use -vvvv to see details
+
+2026-04-16 06:04:23,422 p=3348 u=ubuntu n=ansible INFO| PLAY [Understanding users] *************************************************************************************************************************************************
+2026-04-16 06:04:23,431 p=3348 u=ubuntu n=ansible INFO| TASK [Gathering Facts] *****************************************************************************************************************************************************
+2026-04-16 06:04:25,785 p=3348 u=ubuntu n=ansible WARNING| [WARNING]: Host 'db01' is using the discovered Python interpreter at '/usr/bin/python3.12', but future installation of another Python interpreter could cause a different interpreter to be discovered. See https://docs.ansible.com/ansible-core/2.20/reference_appendices/interpreter_discovery.html for more information.
+
+2026-04-16 06:04:25,785 p=3348 u=ubuntu n=ansible INFO| ok: [db01]
+2026-04-16 06:04:26,064 p=3348 u=ubuntu n=ansible WARNING| [WARNING]: Host 'web02' is using the discovered Python interpreter at '/usr/bin/python3.12', but future installation of another Python interpreter could cause a different interpreter to be discovered. See https://docs.ansible.com/ansible-core/2.20/reference_appendices/interpreter_discovery.html for more information.
+
+2026-04-16 06:04:26,065 p=3348 u=ubuntu n=ansible INFO| ok: [web02]
+2026-04-16 06:04:26,144 p=3348 u=ubuntu n=ansible WARNING| [WARNING]: Host 'web01' is using the discovered Python interpreter at '/usr/bin/python3.12', but future installation of another Python interpreter could cause a different interpreter to be discovered. See https://docs.ansible.com/ansible-core/2.20/reference_appendices/interpreter_discovery.html for more information.
+
+2026-04-16 06:04:26,145 p=3348 u=ubuntu n=ansible INFO| ok: [web01]
+2026-04-16 06:04:26,149 p=3348 u=ubuntu n=ansible INFO| TASK [create users] ********************************************************************************************************************************************************
+2026-04-16 06:04:26,938 p=3348 u=ubuntu n=ansible INFO| changed: [web01]
+2026-04-16 06:04:26,944 p=3348 u=ubuntu n=ansible INFO| changed: [web02]
+2026-04-16 06:04:26,970 p=3348 u=ubuntu n=ansible INFO| changed: [db01]
+2026-04-16 06:04:26,976 p=3348 u=ubuntu n=ansible INFO| TASK [printing variable usrout] ********************************************************************************************************************************************
+2026-04-16 06:04:27,019 p=3348 u=ubuntu n=ansible WARNING| [WARNING]: Encountered 1 template error.
+error 1 - 'userout' is undefined
+Origin: /home/ubuntu/vprofile/excercise1/db.yml:16:14
+
+14     - name: printing variable usrout
+15       debug:
+16         var: userout
+                ^ column 14
+
+
+2026-04-16 06:04:27,021 p=3348 u=ubuntu n=ansible INFO| ok: [web01] => {
+    "userout": "<< error 1 - 'userout' is undefined >>"
+}
+2026-04-16 06:04:27,022 p=3348 u=ubuntu n=ansible INFO| ok: [web02] => {
+    "userout": "<< error 1 - 'userout' is undefined >>"
+}
+2026-04-16 06:04:27,035 p=3348 u=ubuntu n=ansible INFO| ok: [db01] => {
+    "userout": "<< error 1 - 'userout' is undefined >>"
+}
+2026-04-16 06:04:27,036 p=3348 u=ubuntu n=ansible INFO| PLAY RECAP *****************************************************************************************************************************************************************
+2026-04-16 06:04:27,037 p=3348 u=ubuntu n=ansible INFO| db01                       : ok=3    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2026-04-16 06:04:27,037 p=3348 u=ubuntu n=ansible INFO| web01                      : ok=3    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2026-04-16 06:04:27,037 p=3348 u=ubuntu n=ansible INFO| web02                      : ok=3    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2026-04-16 06:05:10,853 p=3420 u=ubuntu n=ansible WARNING| [WARNING]: Invalid characters were found in group names but not replaced, use -vvvv to see details
+
+2026-04-16 06:05:11,054 p=3420 u=ubuntu n=ansible INFO| PLAY [Understanding users] *************************************************************************************************************************************************
+2026-04-16 06:05:11,063 p=3420 u=ubuntu n=ansible INFO| TASK [Gathering Facts] *****************************************************************************************************************************************************
+2026-04-16 06:05:12,516 p=3420 u=ubuntu n=ansible WARNING| [WARNING]: Host 'db01' is using the discovered Python interpreter at '/usr/bin/python3.12', but future installation of another Python interpreter could cause a different interpreter to be discovered. See https://docs.ansible.com/ansible-core/2.20/reference_appendices/interpreter_discovery.html for more information.
+
+2026-04-16 06:05:12,516 p=3420 u=ubuntu n=ansible INFO| ok: [db01]
+2026-04-16 06:05:12,528 p=3420 u=ubuntu n=ansible WARNING| [WARNING]: Host 'web02' is using the discovered Python interpreter at '/usr/bin/python3.12', but future installation of another Python interpreter could cause a different interpreter to be discovered. See https://docs.ansible.com/ansible-core/2.20/reference_appendices/interpreter_discovery.html for more information.
+
+2026-04-16 06:05:12,528 p=3420 u=ubuntu n=ansible INFO| ok: [web02]
+2026-04-16 06:05:12,531 p=3420 u=ubuntu n=ansible WARNING| [WARNING]: Host 'web01' is using the discovered Python interpreter at '/usr/bin/python3.12', but future installation of another Python interpreter could cause a different interpreter to be discovered. See https://docs.ansible.com/ansible-core/2.20/reference_appendices/interpreter_discovery.html for more information.
+
+2026-04-16 06:05:12,531 p=3420 u=ubuntu n=ansible INFO| ok: [web01]
+2026-04-16 06:05:12,535 p=3420 u=ubuntu n=ansible INFO| TASK [create users] ********************************************************************************************************************************************************
+2026-04-16 06:05:13,250 p=3420 u=ubuntu n=ansible INFO| ok: [web01]
+2026-04-16 06:05:13,265 p=3420 u=ubuntu n=ansible INFO| ok: [web02]
+2026-04-16 06:05:13,270 p=3420 u=ubuntu n=ansible INFO| ok: [db01]
+2026-04-16 06:05:13,276 p=3420 u=ubuntu n=ansible INFO| TASK [printing variable usrout] ********************************************************************************************************************************************
+2026-04-16 06:05:13,317 p=3420 u=ubuntu n=ansible INFO| ok: [web01] => {
+    "usrout": {
+        "append": false,
+        "changed": false,
+        "comment": "variable from playbook",
+        "failed": false,
+        "group": 1001,
+        "home": "/home/vprofile",
+        "move_home": false,
+        "name": "vprofile",
+        "shell": "/bin/sh",
+        "state": "present",
+        "uid": 1001
+    }
+}
+2026-04-16 06:05:13,320 p=3420 u=ubuntu n=ansible INFO| ok: [web02] => {
+    "usrout": {
+        "append": false,
+        "changed": false,
+        "comment": "variable from playbook",
+        "failed": false,
+        "group": 1001,
+        "home": "/home/vprofile",
+        "move_home": false,
+        "name": "vprofile",
+        "shell": "/bin/sh",
+        "state": "present",
+        "uid": 1001
+    }
+}
+2026-04-16 06:05:13,333 p=3420 u=ubuntu n=ansible INFO| ok: [db01] => {
+    "usrout": {
+        "append": false,
+        "changed": false,
+        "comment": "variable from playbook",
+        "failed": false,
+        "group": 1001,
+        "home": "/home/vprofile",
+        "move_home": false,
+        "name": "vprofile",
+        "shell": "/bin/sh",
+        "state": "present",
+        "uid": 1001
+    }
+}
+2026-04-16 06:05:13,335 p=3420 u=ubuntu n=ansible INFO| PLAY RECAP *****************************************************************************************************************************************************************
+2026-04-16 06:05:13,335 p=3420 u=ubuntu n=ansible INFO| db01                       : ok=3    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2026-04-16 06:05:13,335 p=3420 u=ubuntu n=ansible INFO| web01                      : ok=3    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2026-04-16 06:05:13,336 p=3420 u=ubuntu n=ansible INFO| web02                      : ok=3    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2026-04-16 06:06:56,663 p=3481 u=ubuntu n=ansible WARNING| [WARNING]: Invalid characters were found in group names but not replaced, use -vvvv to see details
+
+2026-04-16 06:06:56,869 p=3481 u=ubuntu n=ansible INFO| PLAY [Understanding users] *************************************************************************************************************************************************
+2026-04-16 06:06:56,878 p=3481 u=ubuntu n=ansible INFO| TASK [Gathering Facts] *****************************************************************************************************************************************************
+2026-04-16 06:06:59,185 p=3481 u=ubuntu n=ansible WARNING| [WARNING]: Host 'web01' is using the discovered Python interpreter at '/usr/bin/python3.12', but future installation of another Python interpreter could cause a different interpreter to be discovered. See https://docs.ansible.com/ansible-core/2.20/reference_appendices/interpreter_discovery.html for more information.
+
+2026-04-16 06:06:59,185 p=3481 u=ubuntu n=ansible INFO| ok: [web01]
+2026-04-16 06:06:59,199 p=3481 u=ubuntu n=ansible WARNING| [WARNING]: Host 'web02' is using the discovered Python interpreter at '/usr/bin/python3.12', but future installation of another Python interpreter could cause a different interpreter to be discovered. See https://docs.ansible.com/ansible-core/2.20/reference_appendices/interpreter_discovery.html for more information.
+
+2026-04-16 06:06:59,199 p=3481 u=ubuntu n=ansible INFO| ok: [web02]
+2026-04-16 06:06:59,209 p=3481 u=ubuntu n=ansible WARNING| [WARNING]: Host 'db01' is using the discovered Python interpreter at '/usr/bin/python3.12', but future installation of another Python interpreter could cause a different interpreter to be discovered. See https://docs.ansible.com/ansible-core/2.20/reference_appendices/interpreter_discovery.html for more information.
+
+2026-04-16 06:06:59,209 p=3481 u=ubuntu n=ansible INFO| ok: [db01]
+2026-04-16 06:06:59,213 p=3481 u=ubuntu n=ansible INFO| TASK [create users] ********************************************************************************************************************************************************
+2026-04-16 06:06:59,926 p=3481 u=ubuntu n=ansible INFO| ok: [web01]
+2026-04-16 06:06:59,934 p=3481 u=ubuntu n=ansible INFO| ok: [web02]
+2026-04-16 06:06:59,947 p=3481 u=ubuntu n=ansible INFO| ok: [db01]
+2026-04-16 06:06:59,953 p=3481 u=ubuntu n=ansible INFO| TASK [printing variable usrout name] ***************************************************************************************************************************************
+2026-04-16 06:06:59,994 p=3481 u=ubuntu n=ansible INFO| ok: [web01] => {
+    "usrout.name": "vprofile"
+}
+2026-04-16 06:06:59,998 p=3481 u=ubuntu n=ansible INFO| ok: [web02] => {
+    "usrout.name": "vprofile"
+}
+2026-04-16 06:07:00,034 p=3481 u=ubuntu n=ansible INFO| ok: [db01] => {
+    "usrout.name": "vprofile"
+}
+2026-04-16 06:07:00,074 p=3481 u=ubuntu n=ansible INFO| TASK [printing variable usrout comment] ************************************************************************************************************************************
+2026-04-16 06:07:00,147 p=3481 u=ubuntu n=ansible INFO| ok: [web01] => {
+    "usrout.comment": "variable from playbook"
+}
+2026-04-16 06:07:00,148 p=3481 u=ubuntu n=ansible INFO| ok: [web02] => {
+    "usrout.comment": "variable from playbook"
+}
+2026-04-16 06:07:00,160 p=3481 u=ubuntu n=ansible INFO| ok: [db01] => {
+    "usrout.comment": "variable from playbook"
+}
+2026-04-16 06:07:00,161 p=3481 u=ubuntu n=ansible INFO| PLAY RECAP *****************************************************************************************************************************************************************
+2026-04-16 06:07:00,162 p=3481 u=ubuntu n=ansible INFO| db01                       : ok=4    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2026-04-16 06:07:00,162 p=3481 u=ubuntu n=ansible INFO| web01                      : ok=4    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2026-04-16 06:07:00,162 p=3481 u=ubuntu n=ansible INFO| web02                      : ok=4    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2026-04-16 06:11:17,856 p=3581 u=ubuntu n=ansible WARNING| [WARNING]: Invalid characters were found in group names but not replaced, use -vvvv to see details
+
+2026-04-16 06:11:18,061 p=3581 u=ubuntu n=ansible INFO| PLAY [Understanding users] *************************************************************************************************************************************************
+2026-04-16 06:11:18,070 p=3581 u=ubuntu n=ansible INFO| TASK [Gathering Facts] *****************************************************************************************************************************************************
+2026-04-16 06:11:20,340 p=3581 u=ubuntu n=ansible WARNING| [WARNING]: Host 'web01' is using the discovered Python interpreter at '/usr/bin/python3.12', but future installation of another Python interpreter could cause a different interpreter to be discovered. See https://docs.ansible.com/ansible-core/2.20/reference_appendices/interpreter_discovery.html for more information.
+
+2026-04-16 06:11:20,340 p=3581 u=ubuntu n=ansible INFO| ok: [web01]
+2026-04-16 06:11:20,372 p=3581 u=ubuntu n=ansible WARNING| [WARNING]: Host 'web02' is using the discovered Python interpreter at '/usr/bin/python3.12', but future installation of another Python interpreter could cause a different interpreter to be discovered. See https://docs.ansible.com/ansible-core/2.20/reference_appendices/interpreter_discovery.html for more information.
+
+2026-04-16 06:11:20,372 p=3581 u=ubuntu n=ansible INFO| ok: [web02]
+2026-04-16 06:11:20,404 p=3581 u=ubuntu n=ansible WARNING| [WARNING]: Host 'db01' is using the discovered Python interpreter at '/usr/bin/python3.12', but future installation of another Python interpreter could cause a different interpreter to be discovered. See https://docs.ansible.com/ansible-core/2.20/reference_appendices/interpreter_discovery.html for more information.
+
+2026-04-16 06:11:20,404 p=3581 u=ubuntu n=ansible INFO| ok: [db01]
+2026-04-16 06:11:20,408 p=3581 u=ubuntu n=ansible INFO| TASK [create users] ********************************************************************************************************************************************************
+2026-04-16 06:11:21,106 p=3581 u=ubuntu n=ansible INFO| ok: [web01]
+2026-04-16 06:11:21,121 p=3581 u=ubuntu n=ansible INFO| ok: [web02]
+2026-04-16 06:11:21,125 p=3581 u=ubuntu n=ansible INFO| ok: [db01]
+2026-04-16 06:11:21,131 p=3581 u=ubuntu n=ansible INFO| TASK [printing variable usrout name] ***************************************************************************************************************************************
+2026-04-16 06:11:21,175 p=3581 u=ubuntu n=ansible INFO| ok: [web01] => {
+    "usrout.name": "vprofile"
+}
+2026-04-16 06:11:21,176 p=3581 u=ubuntu n=ansible INFO| ok: [web02] => {
+    "usrout.name": "vprofile"
+}
+2026-04-16 06:11:21,187 p=3581 u=ubuntu n=ansible INFO| ok: [db01] => {
+    "usrout.name": "vprofile"
+}
+2026-04-16 06:11:21,192 p=3581 u=ubuntu n=ansible INFO| TASK [printing variable usrout comment] ************************************************************************************************************************************
+2026-04-16 06:11:21,232 p=3581 u=ubuntu n=ansible INFO| ok: [web01] => {
+    "usrout.comment": "variable from playbook"
+}
+2026-04-16 06:11:21,237 p=3581 u=ubuntu n=ansible INFO| ok: [web02] => {
+    "usrout.comment": "variable from playbook"
+}
+2026-04-16 06:11:21,247 p=3581 u=ubuntu n=ansible INFO| ok: [db01] => {
+    "usrout.comment": "variable from playbook"
+}
+2026-04-16 06:11:21,248 p=3581 u=ubuntu n=ansible INFO| PLAY RECAP *****************************************************************************************************************************************************************
+2026-04-16 06:11:21,249 p=3581 u=ubuntu n=ansible INFO| db01                       : ok=4    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2026-04-16 06:11:21,249 p=3581 u=ubuntu n=ansible INFO| web01                      : ok=4    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2026-04-16 06:11:21,249 p=3581 u=ubuntu n=ansible INFO| web02                      : ok=4    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2026-04-16 06:12:34,852 p=3661 u=ubuntu n=ansible WARNING| [WARNING]: Invalid characters were found in group names but not replaced, use -vvvv to see details
+
+2026-04-16 06:12:35,057 p=3661 u=ubuntu n=ansible INFO| PLAY [Understanding users] *************************************************************************************************************************************************
+2026-04-16 06:12:35,065 p=3661 u=ubuntu n=ansible INFO| TASK [Gathering Facts] *****************************************************************************************************************************************************
+2026-04-16 06:12:37,391 p=3661 u=ubuntu n=ansible WARNING| [WARNING]: Host 'web01' is using the discovered Python interpreter at '/usr/bin/python3.12', but future installation of another Python interpreter could cause a different interpreter to be discovered. See https://docs.ansible.com/ansible-core/2.20/reference_appendices/interpreter_discovery.html for more information.
+
+2026-04-16 06:12:37,391 p=3661 u=ubuntu n=ansible INFO| ok: [web01]
+2026-04-16 06:12:37,395 p=3661 u=ubuntu n=ansible WARNING| [WARNING]: Host 'db01' is using the discovered Python interpreter at '/usr/bin/python3.12', but future installation of another Python interpreter could cause a different interpreter to be discovered. See https://docs.ansible.com/ansible-core/2.20/reference_appendices/interpreter_discovery.html for more information.
+
+2026-04-16 06:12:37,395 p=3661 u=ubuntu n=ansible INFO| ok: [db01]
+2026-04-16 06:12:37,408 p=3661 u=ubuntu n=ansible WARNING| [WARNING]: Host 'web02' is using the discovered Python interpreter at '/usr/bin/python3.12', but future installation of another Python interpreter could cause a different interpreter to be discovered. See https://docs.ansible.com/ansible-core/2.20/reference_appendices/interpreter_discovery.html for more information.
+
+2026-04-16 06:12:37,408 p=3661 u=ubuntu n=ansible INFO| ok: [web02]
+2026-04-16 06:12:37,412 p=3661 u=ubuntu n=ansible INFO| TASK [create users] ********************************************************************************************************************************************************
+2026-04-16 06:12:38,195 p=3661 u=ubuntu n=ansible INFO| changed: [web01]
+2026-04-16 06:12:38,202 p=3661 u=ubuntu n=ansible INFO| changed: [web02]
+2026-04-16 06:12:38,211 p=3661 u=ubuntu n=ansible INFO| changed: [db01]
+2026-04-16 06:12:38,217 p=3661 u=ubuntu n=ansible INFO| TASK [printing variable usrout name] ***************************************************************************************************************************************
+2026-04-16 06:12:38,257 p=3661 u=ubuntu n=ansible INFO| ok: [web01] => {
+    "usrout.name": "nandhini"
+}
+2026-04-16 06:12:38,260 p=3661 u=ubuntu n=ansible INFO| ok: [web02] => {
+    "usrout.name": "nandhini"
+}
+2026-04-16 06:12:38,273 p=3661 u=ubuntu n=ansible INFO| ok: [db01] => {
+    "usrout.name": "nalini"
+}
+2026-04-16 06:12:38,278 p=3661 u=ubuntu n=ansible INFO| TASK [printing variable usrout comment] ************************************************************************************************************************************
+2026-04-16 06:12:38,316 p=3661 u=ubuntu n=ansible INFO| ok: [web01] => {
+    "usrout.comment": "variable from group_vars/webservers file"
+}
+2026-04-16 06:12:38,323 p=3661 u=ubuntu n=ansible INFO| ok: [web02] => {
+    "usrout.comment": "variable from group_vars/webservers file"
+}
+2026-04-16 06:12:38,334 p=3661 u=ubuntu n=ansible INFO| ok: [db01] => {
+    "usrout.comment": "variable from group_vars/all file"
+}
+2026-04-16 06:12:38,336 p=3661 u=ubuntu n=ansible INFO| PLAY RECAP *****************************************************************************************************************************************************************
+2026-04-16 06:12:38,336 p=3661 u=ubuntu n=ansible INFO| db01                       : ok=4    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2026-04-16 06:12:38,336 p=3661 u=ubuntu n=ansible INFO| web01                      : ok=4    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2026-04-16 06:12:38,336 p=3661 u=ubuntu n=ansible INFO| web02                      : ok=4    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2026-04-16 06:14:53,047 p=3739 u=ubuntu n=ansible WARNING| [WARNING]: Invalid characters were found in group names but not replaced, use -vvvv to see details
+
+2026-04-16 06:14:53,250 p=3739 u=ubuntu n=ansible INFO| PLAY [Understanding users] *************************************************************************************************************************************************
+2026-04-16 06:14:53,260 p=3739 u=ubuntu n=ansible INFO| TASK [Gathering Facts] *****************************************************************************************************************************************************
+2026-04-16 06:14:55,590 p=3739 u=ubuntu n=ansible WARNING| [WARNING]: Host 'web01' is using the discovered Python interpreter at '/usr/bin/python3.12', but future installation of another Python interpreter could cause a different interpreter to be discovered. See https://docs.ansible.com/ansible-core/2.20/reference_appendices/interpreter_discovery.html for more information.
+
+2026-04-16 06:14:55,591 p=3739 u=ubuntu n=ansible INFO| ok: [web01]
+2026-04-16 06:14:55,599 p=3739 u=ubuntu n=ansible WARNING| [WARNING]: Host 'web02' is using the discovered Python interpreter at '/usr/bin/python3.12', but future installation of another Python interpreter could cause a different interpreter to be discovered. See https://docs.ansible.com/ansible-core/2.20/reference_appendices/interpreter_discovery.html for more information.
+
+2026-04-16 06:14:55,601 p=3739 u=ubuntu n=ansible INFO| ok: [web02]
+2026-04-16 06:14:55,604 p=3739 u=ubuntu n=ansible WARNING| [WARNING]: Host 'db01' is using the discovered Python interpreter at '/usr/bin/python3.12', but future installation of another Python interpreter could cause a different interpreter to be discovered. See https://docs.ansible.com/ansible-core/2.20/reference_appendices/interpreter_discovery.html for more information.
+
+2026-04-16 06:14:55,604 p=3739 u=ubuntu n=ansible INFO| ok: [db01]
+2026-04-16 06:14:55,608 p=3739 u=ubuntu n=ansible INFO| TASK [create users] ********************************************************************************************************************************************************
+2026-04-16 06:14:56,307 p=3739 u=ubuntu n=ansible INFO| ok: [web02]
+2026-04-16 06:14:56,330 p=3739 u=ubuntu n=ansible INFO| ok: [db01]
+2026-04-16 06:14:56,373 p=3739 u=ubuntu n=ansible INFO| changed: [web01]
+2026-04-16 06:14:56,380 p=3739 u=ubuntu n=ansible INFO| TASK [printing variable usrout name] ***************************************************************************************************************************************
+2026-04-16 06:14:56,421 p=3739 u=ubuntu n=ansible INFO| ok: [web01] => {
+    "usrout.name": "kavitha"
+}
+2026-04-16 06:14:56,424 p=3739 u=ubuntu n=ansible INFO| ok: [web02] => {
+    "usrout.name": "nandhini"
+}
+2026-04-16 06:14:56,436 p=3739 u=ubuntu n=ansible INFO| ok: [db01] => {
+    "usrout.name": "nalini"
+}
+2026-04-16 06:14:56,441 p=3739 u=ubuntu n=ansible INFO| TASK [printing variable usrout comment] ************************************************************************************************************************************
+2026-04-16 06:14:56,481 p=3739 u=ubuntu n=ansible INFO| ok: [web01] => {
+    "usrout.comment": "variable from host_vars/web01"
+}
+2026-04-16 06:14:56,485 p=3739 u=ubuntu n=ansible INFO| ok: [web02] => {
+    "usrout.comment": "variable from group_vars/webservers file"
+}
+2026-04-16 06:14:56,496 p=3739 u=ubuntu n=ansible INFO| ok: [db01] => {
+    "usrout.comment": "variable from group_vars/all file"
+}
+2026-04-16 06:14:56,497 p=3739 u=ubuntu n=ansible INFO| PLAY RECAP *****************************************************************************************************************************************************************
+2026-04-16 06:14:56,498 p=3739 u=ubuntu n=ansible INFO| db01                       : ok=4    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2026-04-16 06:14:56,498 p=3739 u=ubuntu n=ansible INFO| web01                      : ok=4    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2026-04-16 06:14:56,498 p=3739 u=ubuntu n=ansible INFO| web02                      : ok=4    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2026-04-16 06:16:32,738 p=3914 u=ubuntu n=ansible WARNING| [WARNING]: Invalid characters were found in group names but not replaced, use -vvvv to see details
+
+2026-04-16 06:16:32,945 p=3914 u=ubuntu n=ansible INFO| PLAY [Understanding users] *************************************************************************************************************************************************
+2026-04-16 06:16:32,955 p=3914 u=ubuntu n=ansible INFO| TASK [Gathering Facts] *****************************************************************************************************************************************************
+2026-04-16 06:16:35,290 p=3914 u=ubuntu n=ansible WARNING| [WARNING]: Host 'web01' is using the discovered Python interpreter at '/usr/bin/python3.12', but future installation of another Python interpreter could cause a different interpreter to be discovered. See https://docs.ansible.com/ansible-core/2.20/reference_appendices/interpreter_discovery.html for more information.
+
+2026-04-16 06:16:35,290 p=3914 u=ubuntu n=ansible INFO| ok: [web01]
+2026-04-16 06:16:35,301 p=3914 u=ubuntu n=ansible WARNING| [WARNING]: Host 'web02' is using the discovered Python interpreter at '/usr/bin/python3.12', but future installation of another Python interpreter could cause a different interpreter to be discovered. See https://docs.ansible.com/ansible-core/2.20/reference_appendices/interpreter_discovery.html for more information.
+
+2026-04-16 06:16:35,301 p=3914 u=ubuntu n=ansible INFO| ok: [web02]
+2026-04-16 06:16:35,312 p=3914 u=ubuntu n=ansible WARNING| [WARNING]: Host 'db01' is using the discovered Python interpreter at '/usr/bin/python3.12', but future installation of another Python interpreter could cause a different interpreter to be discovered. See https://docs.ansible.com/ansible-core/2.20/reference_appendices/interpreter_discovery.html for more information.
+
+2026-04-16 06:16:35,312 p=3914 u=ubuntu n=ansible INFO| ok: [db01]
+2026-04-16 06:16:35,317 p=3914 u=ubuntu n=ansible INFO| TASK [create users] ********************************************************************************************************************************************************
+2026-04-16 06:16:36,045 p=3914 u=ubuntu n=ansible INFO| changed: [web01]
+2026-04-16 06:16:36,064 p=3914 u=ubuntu n=ansible INFO| changed: [web02]
+2026-04-16 06:16:36,100 p=3914 u=ubuntu n=ansible INFO| changed: [db01]
+2026-04-16 06:16:36,105 p=3914 u=ubuntu n=ansible INFO| TASK [printing variable usrout name] ***************************************************************************************************************************************
+2026-04-16 06:16:36,145 p=3914 u=ubuntu n=ansible INFO| ok: [web01] => {
+    "usrout.name": "visalatchi"
+}
+2026-04-16 06:16:36,150 p=3914 u=ubuntu n=ansible INFO| ok: [web02] => {
+    "usrout.name": "visalatchi"
+}
+2026-04-16 06:16:36,161 p=3914 u=ubuntu n=ansible INFO| ok: [db01] => {
+    "usrout.name": "visalatchi"
+}
+2026-04-16 06:16:36,166 p=3914 u=ubuntu n=ansible INFO| TASK [printing variable usrout comment] ************************************************************************************************************************************
+2026-04-16 06:16:36,204 p=3914 u=ubuntu n=ansible INFO| ok: [web01] => {
+    "usrout.comment": "CLI"
+}
+2026-04-16 06:16:36,208 p=3914 u=ubuntu n=ansible INFO| ok: [web02] => {
+    "usrout.comment": "CLI"
+}
+2026-04-16 06:16:36,221 p=3914 u=ubuntu n=ansible INFO| ok: [db01] => {
+    "usrout.comment": "CLI"
+}
+2026-04-16 06:16:36,223 p=3914 u=ubuntu n=ansible INFO| PLAY RECAP *****************************************************************************************************************************************************************
+2026-04-16 06:16:36,223 p=3914 u=ubuntu n=ansible INFO| db01                       : ok=4    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2026-04-16 06:16:36,223 p=3914 u=ubuntu n=ansible INFO| web01                      : ok=4    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2026-04-16 06:16:36,223 p=3914 u=ubuntu n=ansible INFO| web02                      : ok=4    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2026-04-16 06:24:54,624 p=15827 u=ubuntu n=ansible WARNING| [WARNING]: Invalid characters were found in group names but not replaced, use -vvvv to see details
+
+2026-04-16 06:24:55,014 p=15827 u=ubuntu n=ansible ERROR| [ERROR]: A playbook must be a list of plays, got a <class 'ansible.module_utils._internal._datatag._AnsibleTaggedDict'> instead: /home/ubuntu/vprofile/excercise1/inventory.yml
+Origin: /home/ubuntu/vprofile/excercise1/inventory.yml:1:1
+
+1 all:  
+  ^ column 1
+
+
+2026-04-16 06:26:38,706 p=15858 u=ubuntu n=ansible WARNING| [WARNING]: Invalid characters were found in group names but not replaced, use -vvvv to see details
+
+2026-04-16 06:26:38,884 p=15858 u=ubuntu n=ansible ERROR| [ERROR]: A playbook must be a list of plays, got a <class 'ansible.module_utils._internal._datatag._AnsibleTaggedDict'> instead: /home/ubuntu/vprofile/excercise1/inventory.yml
+Origin: /home/ubuntu/vprofile/excercise1/inventory.yml:1:1
+
+1 all:  
+  ^ column 1
+
+
+2026-04-16 06:27:48,637 p=15865 u=ubuntu n=ansible WARNING| [WARNING]: Invalid characters were found in group names but not replaced, use -vvvv to see details
+
+2026-04-16 06:27:48,816 p=15865 u=ubuntu n=ansible ERROR| [ERROR]: 'vars_file' is not a valid attribute for a Play
+Origin: /home/ubuntu/vprofile/excercise1/db.yml:5:3
+
+3   hosts: all
+4   become: yes
+5   vars_file:
+    ^ column 3
+
+
+2026-04-16 06:29:13,341 p=15870 u=ubuntu n=ansible WARNING| [WARNING]: Invalid characters were found in group names but not replaced, use -vvvv to see details
+
+2026-04-16 06:29:13,560 p=15870 u=ubuntu n=ansible INFO| PLAY [Understanding users] *************************************************************************************************************************************************
+2026-04-16 06:29:13,585 p=15870 u=ubuntu n=ansible INFO| TASK [Gathering Facts] *****************************************************************************************************************************************************
+2026-04-16 06:29:16,037 p=15870 u=ubuntu n=ansible WARNING| [WARNING]: Host 'web02' is using the discovered Python interpreter at '/usr/bin/python3.12', but future installation of another Python interpreter could cause a different interpreter to be discovered. See https://docs.ansible.com/ansible-core/2.20/reference_appendices/interpreter_discovery.html for more information.
+
+2026-04-16 06:29:16,037 p=15870 u=ubuntu n=ansible INFO| ok: [web02]
+2026-04-16 06:29:16,044 p=15870 u=ubuntu n=ansible WARNING| [WARNING]: Host 'web01' is using the discovered Python interpreter at '/usr/bin/python3.12', but future installation of another Python interpreter could cause a different interpreter to be discovered. See https://docs.ansible.com/ansible-core/2.20/reference_appendices/interpreter_discovery.html for more information.
+
+2026-04-16 06:29:16,045 p=15870 u=ubuntu n=ansible INFO| ok: [web01]
+2026-04-16 06:29:16,068 p=15870 u=ubuntu n=ansible WARNING| [WARNING]: Host 'db01' is using the discovered Python interpreter at '/usr/bin/python3.12', but future installation of another Python interpreter could cause a different interpreter to be discovered. See https://docs.ansible.com/ansible-core/2.20/reference_appendices/interpreter_discovery.html for more information.
+
+2026-04-16 06:29:16,068 p=15870 u=ubuntu n=ansible INFO| ok: [db01]
+2026-04-16 06:29:16,073 p=15870 u=ubuntu n=ansible INFO| TASK [create users] ********************************************************************************************************************************************************
+2026-04-16 06:29:16,846 p=15870 u=ubuntu n=ansible INFO| changed: [web01]
+2026-04-16 06:29:16,852 p=15870 u=ubuntu n=ansible INFO| changed: [web02]
+2026-04-16 06:29:16,860 p=15870 u=ubuntu n=ansible INFO| changed: [db01]
+2026-04-16 06:29:16,868 p=15870 u=ubuntu n=ansible INFO| TASK [printing variable usrout name] ***************************************************************************************************************************************
+2026-04-16 06:29:16,912 p=15870 u=ubuntu n=ansible INFO| ok: [web01] => {
+    "usrout.name": "selvaraj"
+}
+2026-04-16 06:29:16,916 p=15870 u=ubuntu n=ansible INFO| ok: [web02] => {
+    "usrout.name": "selvaraj"
+}
+2026-04-16 06:29:16,926 p=15870 u=ubuntu n=ansible INFO| ok: [db01] => {
+    "usrout.name": "selvaraj"
+}
+2026-04-16 06:29:16,932 p=15870 u=ubuntu n=ansible INFO| TASK [printing variable usrout comment] ************************************************************************************************************************************
+2026-04-16 06:29:16,974 p=15870 u=ubuntu n=ansible INFO| ok: [web01] => {
+    "usrout.comment": "The variable defined in /home/ubuntu/vars.yml file"
+}
+2026-04-16 06:29:16,977 p=15870 u=ubuntu n=ansible INFO| ok: [web02] => {
+    "usrout.comment": "The variable defined in /home/ubuntu/vars.yml file"
+}
+2026-04-16 06:29:16,991 p=15870 u=ubuntu n=ansible INFO| ok: [db01] => {
+    "usrout.comment": "The variable defined in /home/ubuntu/vars.yml file"
+}
+2026-04-16 06:29:16,992 p=15870 u=ubuntu n=ansible INFO| PLAY RECAP *****************************************************************************************************************************************************************
+2026-04-16 06:29:16,992 p=15870 u=ubuntu n=ansible INFO| db01                       : ok=4    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2026-04-16 06:29:16,993 p=15870 u=ubuntu n=ansible INFO| web01                      : ok=4    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2026-04-16 06:29:16,993 p=15870 u=ubuntu n=ansible INFO| web02                      : ok=4    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   

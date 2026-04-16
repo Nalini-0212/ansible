@@ -1,0 +1,46 @@
+---
+- name: dbserver setup
+  hosts: dbservers
+  become: yes
+  vars:
+    dbname: vprofile
+    dbpass: password
+    dbuser: accounts
+  tasks:
+    - name: Install mariadb server
+      ansible.builtin.apt:
+        name: mariadb-server
+        state: present
+        update_cache: yes
+    - name: Start mariadb service
+      ansible.builtin.service:
+        name: mariadb
+        state: started
+        enabled: yes
+    - name: install python3-pymysql
+      ansible.builtin.apt:
+        name: python3-pymysql
+        state: present
+    - name: create a database name
+      community.mysql.mysql_db:
+        name: "{{dbname}}"
+        state: present
+        login_unix_socket: /var/run/mysqld/mysqld.sock
+    - name: create a database
+      community.mysql.mysql_user:
+        name: "{{dbuser}}"
+        password: "{{dbpass}}"
+        priv: '"{{dbname}}".*:ALL'
+        state: present
+        login_unix_socket: /var/run/mysqld/mysqld.sock
+      register: dbout
+    - name: print value of dbout variable
+      debug:
+        var: dbout
+    - name: name of database created
+      debug:
+        msg: 'The name of database created is "{{dbname}}"'
+    - name: name of database user created
+      debug:
+        var: dbuser
+

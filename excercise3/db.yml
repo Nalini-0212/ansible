@@ -1,0 +1,36 @@
+---
+- name: Provisioning of servers
+  hosts: all
+  become: yes
+  #gather_facts: False
+  tasks:
+    - name: install NTP service on Ubuntu
+      ansible.builtin.apt:
+        name: chrony
+        state: present
+        update_cache: yes
+      when: ansible_facts.distribution== "Ubuntu"
+    - name: install NTP service on Amazon Linux
+      ansible.builtin.yum:
+        name: chrony
+        state: present
+        update_cache: yes
+      when: ansible_facts.distribution== "Amazon"
+
+    - name: start NTP service on Ubuntu
+      ansible.builtin.service:
+        name: chrony
+        state: started
+        enabled: yes
+      when: ansible_facts.distribution== "Ubuntu"
+
+    - name: start NTP service on Amazon Linux
+      ansible.builtin.service:
+        name: chronyd
+        state: started
+        enabled: yes
+      when: ansible_facts.distribution== "Amazon"
+    - name: shutdown Ubuntu 24 & Amazon Linux 2023
+      ansible.builtin.command: /sbin/shutdown -t now
+      when: (ansible_facts.distribution == "Ubuntu"  and ansible_facts.distribution_major_version== "24") or (ansible_facts.distribution == "Amazon" and ansible_facts.distribution_major_version== "2023")
+

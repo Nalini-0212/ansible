@@ -1,0 +1,15 @@
+---
+- name: understanding users
+  hosts: all
+  become: yes
+  vars:
+    users:
+      - test1
+      - test2
+      - test3
+  tasks:
+    - name: create users
+      ansible.builtin.user:
+        name: "{{item}}"
+        state: present
+      loop: "{{users}}"

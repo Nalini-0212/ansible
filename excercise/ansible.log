@@ -1,0 +1,189 @@
+2026-04-16 05:34:28,549 p=2887 u=ubuntu n=ansible WARNING| [WARNING]: Invalid characters were found in group names but not replaced, use -vvvv to see details
+
+2026-04-16 05:34:28,758 p=2887 u=ubuntu n=ansible INFO| PLAY [dbserver setup] ******************************************************************************************************************************************************
+2026-04-16 05:34:28,767 p=2887 u=ubuntu n=ansible INFO| TASK [Gathering Facts] *****************************************************************************************************************************************************
+2026-04-16 05:34:31,045 p=2887 u=ubuntu n=ansible WARNING| [WARNING]: Host 'db01' is using the discovered Python interpreter at '/usr/bin/python3.12', but future installation of another Python interpreter could cause a different interpreter to be discovered. See https://docs.ansible.com/ansible-core/2.20/reference_appendices/interpreter_discovery.html for more information.
+
+2026-04-16 05:34:31,045 p=2887 u=ubuntu n=ansible INFO| ok: [db01]
+2026-04-16 05:34:31,051 p=2887 u=ubuntu n=ansible INFO| TASK [Install mariadb server] **********************************************************************************************************************************************
+2026-04-16 05:34:31,847 p=2887 u=ubuntu n=ansible ERROR| [ERROR]: Task failed: Module failed: No package matching 'mariadb-server' is available
+Origin: /home/ubuntu/vprofile/excercise/db.yml:6:7
+
+4   become: yes
+5   tasks:
+6     - name: Install mariadb server
+        ^ column 7
+
+
+2026-04-16 05:34:31,848 p=2887 u=ubuntu n=ansible INFO| fatal: [db01]: FAILED! => {"changed": false, "msg": "No package matching 'mariadb-server' is available"}
+2026-04-16 05:34:31,849 p=2887 u=ubuntu n=ansible INFO| PLAY RECAP *****************************************************************************************************************************************************************
+2026-04-16 05:34:31,849 p=2887 u=ubuntu n=ansible INFO| db01                       : ok=1    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2026-04-16 05:36:01,116 p=2919 u=ubuntu n=ansible WARNING| [WARNING]: Invalid characters were found in group names but not replaced, use -vvvv to see details
+
+2026-04-16 05:36:01,438 p=2919 u=ubuntu n=ansible INFO| PLAY [dbserver setup] ******************************************************************************************************************************************************
+2026-04-16 05:36:01,460 p=2919 u=ubuntu n=ansible INFO| TASK [Gathering Facts] *****************************************************************************************************************************************************
+2026-04-16 05:36:04,458 p=2919 u=ubuntu n=ansible WARNING| [WARNING]: Host 'db01' is using the discovered Python interpreter at '/usr/bin/python3.12', but future installation of another Python interpreter could cause a different interpreter to be discovered. See https://docs.ansible.com/ansible-core/2.20/reference_appendices/interpreter_discovery.html for more information.
+
+2026-04-16 05:36:04,458 p=2919 u=ubuntu n=ansible INFO| ok: [db01]
+2026-04-16 05:36:04,464 p=2919 u=ubuntu n=ansible INFO| TASK [Install mariadb server] **********************************************************************************************************************************************
+2026-04-16 05:36:46,806 p=2919 u=ubuntu n=ansible INFO| changed: [db01]
+2026-04-16 05:36:46,812 p=2919 u=ubuntu n=ansible INFO| TASK [Start mariadb service] ***********************************************************************************************************************************************
+2026-04-16 05:36:47,816 p=2919 u=ubuntu n=ansible INFO| ok: [db01]
+2026-04-16 05:36:47,822 p=2919 u=ubuntu n=ansible INFO| TASK [install python3-pymysql] *********************************************************************************************************************************************
+2026-04-16 05:36:53,088 p=2919 u=ubuntu n=ansible INFO| changed: [db01]
+2026-04-16 05:36:53,093 p=2919 u=ubuntu n=ansible INFO| TASK [create a database name "vprofile"] ***********************************************************************************************************************************
+2026-04-16 05:36:53,792 p=2919 u=ubuntu n=ansible INFO| changed: [db01]
+2026-04-16 05:36:53,798 p=2919 u=ubuntu n=ansible INFO| TASK [create a database user "accounts" in vprofile database] **************************************************************************************************************
+2026-04-16 05:36:54,465 p=2919 u=ubuntu n=ansible INFO| changed: [db01]
+2026-04-16 05:36:54,467 p=2919 u=ubuntu n=ansible INFO| PLAY RECAP *****************************************************************************************************************************************************************
+2026-04-16 05:36:54,467 p=2919 u=ubuntu n=ansible INFO| db01                       : ok=6    changed=4    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2026-04-16 05:37:02,260 p=2975 u=ubuntu n=ansible WARNING| [WARNING]: Invalid characters were found in group names but not replaced, use -vvvv to see details
+
+2026-04-16 05:37:02,639 p=2975 u=ubuntu n=ansible INFO| PLAY [dbserver setup] ******************************************************************************************************************************************************
+2026-04-16 05:37:02,650 p=2975 u=ubuntu n=ansible INFO| TASK [Gathering Facts] *****************************************************************************************************************************************************
+2026-04-16 05:37:04,394 p=2975 u=ubuntu n=ansible WARNING| [WARNING]: Host 'db01' is using the discovered Python interpreter at '/usr/bin/python3.12', but future installation of another Python interpreter could cause a different interpreter to be discovered. See https://docs.ansible.com/ansible-core/2.20/reference_appendices/interpreter_discovery.html for more information.
+
+2026-04-16 05:37:04,394 p=2975 u=ubuntu n=ansible INFO| ok: [db01]
+2026-04-16 05:37:04,400 p=2975 u=ubuntu n=ansible INFO| TASK [Install mariadb server] **********************************************************************************************************************************************
+2026-04-16 05:37:14,282 p=2975 u=ubuntu n=ansible INFO| ok: [db01]
+2026-04-16 05:37:14,288 p=2975 u=ubuntu n=ansible INFO| TASK [Start mariadb service] ***********************************************************************************************************************************************
+2026-04-16 05:37:15,201 p=2975 u=ubuntu n=ansible INFO| ok: [db01]
+2026-04-16 05:37:15,206 p=2975 u=ubuntu n=ansible INFO| TASK [install python3-pymysql] *********************************************************************************************************************************************
+2026-04-16 05:37:16,383 p=2975 u=ubuntu n=ansible INFO| ok: [db01]
+2026-04-16 05:37:16,388 p=2975 u=ubuntu n=ansible INFO| TASK [create a database name "vprofile"] ***********************************************************************************************************************************
+2026-04-16 05:37:16,983 p=2975 u=ubuntu n=ansible INFO| ok: [db01]
+2026-04-16 05:37:16,988 p=2975 u=ubuntu n=ansible INFO| TASK [create a database user "accounts" in vprofile database] **************************************************************************************************************
+2026-04-16 05:37:17,635 p=2975 u=ubuntu n=ansible INFO| ok: [db01]
+2026-04-16 05:37:17,636 p=2975 u=ubuntu n=ansible INFO| PLAY RECAP *****************************************************************************************************************************************************************
+2026-04-16 05:37:17,637 p=2975 u=ubuntu n=ansible INFO| db01                       : ok=6    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2026-04-16 05:43:58,473 p=3090 u=ubuntu n=ansible WARNING| [WARNING]: Invalid characters were found in group names but not replaced, use -vvvv to see details
+
+2026-04-16 05:43:58,765 p=3090 u=ubuntu n=ansible ERROR| [ERROR]: YAML parsing failed: Values starting with a quote must end with the same quote, and not contain that quote.
+Origin: /home/ubuntu/vprofile/excercise/db.yml:38:14
+
+36     - name: name of database created
+37       debug:
+38         msg: " The name of database created is "{{dbname}}" "
+                ^ column 14
+
+
+For example:
+
+    raw: "foo" in "bar"
+
+Should be:
+
+    raw: '"foo" in "bar"'
+
+
+2026-04-16 05:44:56,392 p=3098 u=ubuntu n=ansible WARNING| [WARNING]: Invalid characters were found in group names but not replaced, use -vvvv to see details
+
+2026-04-16 05:44:56,618 p=3098 u=ubuntu n=ansible INFO| PLAY [dbserver setup] ******************************************************************************************************************************************************
+2026-04-16 05:44:56,634 p=3098 u=ubuntu n=ansible INFO| TASK [Gathering Facts] *****************************************************************************************************************************************************
+2026-04-16 05:44:58,887 p=3098 u=ubuntu n=ansible WARNING| [WARNING]: Host 'db01' is using the discovered Python interpreter at '/usr/bin/python3.12', but future installation of another Python interpreter could cause a different interpreter to be discovered. See https://docs.ansible.com/ansible-core/2.20/reference_appendices/interpreter_discovery.html for more information.
+
+2026-04-16 05:44:58,887 p=3098 u=ubuntu n=ansible INFO| ok: [db01]
+2026-04-16 05:44:58,893 p=3098 u=ubuntu n=ansible INFO| TASK [Install mariadb server] **********************************************************************************************************************************************
+2026-04-16 05:45:20,176 p=3098 u=ubuntu n=ansible INFO| ok: [db01]
+2026-04-16 05:45:20,182 p=3098 u=ubuntu n=ansible INFO| TASK [Start mariadb service] ***********************************************************************************************************************************************
+2026-04-16 05:45:21,073 p=3098 u=ubuntu n=ansible INFO| ok: [db01]
+2026-04-16 05:45:21,078 p=3098 u=ubuntu n=ansible INFO| TASK [install python3-pymysql] *********************************************************************************************************************************************
+2026-04-16 05:45:22,252 p=3098 u=ubuntu n=ansible INFO| ok: [db01]
+2026-04-16 05:45:22,257 p=3098 u=ubuntu n=ansible INFO| TASK [create a database name] **********************************************************************************************************************************************
+2026-04-16 05:45:22,861 p=3098 u=ubuntu n=ansible INFO| ok: [db01]
+2026-04-16 05:45:22,867 p=3098 u=ubuntu n=ansible INFO| TASK [create a database] ***************************************************************************************************************************************************
+2026-04-16 05:45:23,524 p=3098 u=ubuntu n=ansible INFO| changed: [db01]
+2026-04-16 05:45:23,530 p=3098 u=ubuntu n=ansible INFO| TASK [name of database created] ********************************************************************************************************************************************
+2026-04-16 05:45:23,552 p=3098 u=ubuntu n=ansible INFO| ok: [db01] => {
+    "msg": "The name of database created is \"vprofile\""
+}
+2026-04-16 05:45:23,556 p=3098 u=ubuntu n=ansible INFO| TASK [name of database user created] ***************************************************************************************************************************************
+2026-04-16 05:45:23,577 p=3098 u=ubuntu n=ansible INFO| ok: [db01] => {
+    "dbuser": "accounts"
+}
+2026-04-16 05:45:23,578 p=3098 u=ubuntu n=ansible INFO| PLAY RECAP *****************************************************************************************************************************************************************
+2026-04-16 05:45:23,579 p=3098 u=ubuntu n=ansible INFO| db01                       : ok=8    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2026-04-16 05:45:55,310 p=3159 u=ubuntu n=ansible WARNING| [WARNING]: Invalid characters were found in group names but not replaced, use -vvvv to see details
+
+2026-04-16 05:45:55,518 p=3159 u=ubuntu n=ansible INFO| PLAY [dbserver setup] ******************************************************************************************************************************************************
+2026-04-16 05:45:55,526 p=3159 u=ubuntu n=ansible INFO| TASK [Gathering Facts] *****************************************************************************************************************************************************
+2026-04-16 05:45:56,906 p=3159 u=ubuntu n=ansible WARNING| [WARNING]: Host 'db01' is using the discovered Python interpreter at '/usr/bin/python3.12', but future installation of another Python interpreter could cause a different interpreter to be discovered. See https://docs.ansible.com/ansible-core/2.20/reference_appendices/interpreter_discovery.html for more information.
+
+2026-04-16 05:45:56,906 p=3159 u=ubuntu n=ansible INFO| ok: [db01]
+2026-04-16 05:45:56,912 p=3159 u=ubuntu n=ansible INFO| TASK [Install mariadb server] **********************************************************************************************************************************************
+2026-04-16 05:49:32,911 p=3185 u=ubuntu n=ansible WARNING| [WARNING]: Invalid characters were found in group names but not replaced, use -vvvv to see details
+
+2026-04-16 05:49:33,114 p=3185 u=ubuntu n=ansible INFO| PLAY [dbserver setup] ******************************************************************************************************************************************************
+2026-04-16 05:49:33,122 p=3185 u=ubuntu n=ansible INFO| TASK [Gathering Facts] *****************************************************************************************************************************************************
+2026-04-16 05:49:35,157 p=3185 u=ubuntu n=ansible WARNING| [WARNING]: Host 'db01' is using the discovered Python interpreter at '/usr/bin/python3.12', but future installation of another Python interpreter could cause a different interpreter to be discovered. See https://docs.ansible.com/ansible-core/2.20/reference_appendices/interpreter_discovery.html for more information.
+
+2026-04-16 05:49:35,157 p=3185 u=ubuntu n=ansible INFO| ok: [db01]
+2026-04-16 05:49:35,163 p=3185 u=ubuntu n=ansible INFO| TASK [Install mariadb server] **********************************************************************************************************************************************
+2026-04-16 05:53:19,553 p=3185 u=ubuntu n=ansible INFO| ok: [db01]
+2026-04-16 05:53:19,559 p=3185 u=ubuntu n=ansible INFO| TASK [Start mariadb service] ***********************************************************************************************************************************************
+2026-04-16 05:53:20,459 p=3185 u=ubuntu n=ansible INFO| ok: [db01]
+2026-04-16 05:53:20,464 p=3185 u=ubuntu n=ansible INFO| TASK [install python3-pymysql] *********************************************************************************************************************************************
+2026-04-16 05:53:21,623 p=3185 u=ubuntu n=ansible INFO| ok: [db01]
+2026-04-16 05:53:21,628 p=3185 u=ubuntu n=ansible INFO| TASK [create a database name] **********************************************************************************************************************************************
+2026-04-16 05:53:22,238 p=3185 u=ubuntu n=ansible INFO| ok: [db01]
+2026-04-16 05:53:22,244 p=3185 u=ubuntu n=ansible INFO| TASK [create a database] ***************************************************************************************************************************************************
+2026-04-16 05:53:22,886 p=3185 u=ubuntu n=ansible INFO| ok: [db01]
+2026-04-16 05:53:22,892 p=3185 u=ubuntu n=ansible INFO| TASK [print value of dbout variable] ***************************************************************************************************************************************
+2026-04-16 05:53:22,912 p=3185 u=ubuntu n=ansible INFO| ok: [db01] => {
+    "dbout": {
+        "attributes": {},
+        "changed": false,
+        "failed": false,
+        "msg": "User unchanged",
+        "password_changed": false,
+        "user": "accounts"
+    }
+}
+2026-04-16 05:53:22,917 p=3185 u=ubuntu n=ansible INFO| TASK [name of database created] ********************************************************************************************************************************************
+2026-04-16 05:53:22,938 p=3185 u=ubuntu n=ansible INFO| ok: [db01] => {
+    "msg": "The name of database created is \"vprofile\""
+}
+2026-04-16 05:53:22,942 p=3185 u=ubuntu n=ansible INFO| TASK [name of database user created] ***************************************************************************************************************************************
+2026-04-16 05:53:22,962 p=3185 u=ubuntu n=ansible INFO| ok: [db01] => {
+    "dbuser": "accounts"
+}
+2026-04-16 05:53:22,963 p=3185 u=ubuntu n=ansible INFO| PLAY RECAP *****************************************************************************************************************************************************************
+2026-04-16 05:53:22,963 p=3185 u=ubuntu n=ansible INFO| db01                       : ok=9    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2026-04-16 05:58:27,215 p=3261 u=ubuntu n=ansible WARNING| [WARNING]: Invalid characters were found in group names but not replaced, use -vvvv to see details
+
+2026-04-16 05:58:27,423 p=3261 u=ubuntu n=ansible INFO| PLAY [dbserver setup] ******************************************************************************************************************************************************
+2026-04-16 05:58:27,431 p=3261 u=ubuntu n=ansible INFO| TASK [Gathering Facts] *****************************************************************************************************************************************************
+2026-04-16 05:58:29,589 p=3261 u=ubuntu n=ansible WARNING| [WARNING]: Host 'db01' is using the discovered Python interpreter at '/usr/bin/python3.12', but future installation of another Python interpreter could cause a different interpreter to be discovered. See https://docs.ansible.com/ansible-core/2.20/reference_appendices/interpreter_discovery.html for more information.
+
+2026-04-16 05:58:29,590 p=3261 u=ubuntu n=ansible INFO| ok: [db01]
+2026-04-16 05:58:29,596 p=3261 u=ubuntu n=ansible INFO| TASK [Install mariadb server] **********************************************************************************************************************************************
+2026-04-16 05:58:49,504 p=3261 u=ubuntu n=ansible INFO| ok: [db01]
+2026-04-16 05:58:49,510 p=3261 u=ubuntu n=ansible INFO| TASK [Start mariadb service] ***********************************************************************************************************************************************
+2026-04-16 05:58:50,383 p=3261 u=ubuntu n=ansible INFO| ok: [db01]
+2026-04-16 05:58:50,388 p=3261 u=ubuntu n=ansible INFO| TASK [install python3-pymysql] *********************************************************************************************************************************************
+2026-04-16 05:58:51,560 p=3261 u=ubuntu n=ansible INFO| ok: [db01]
+2026-04-16 05:58:51,566 p=3261 u=ubuntu n=ansible INFO| TASK [create a database name] **********************************************************************************************************************************************
+2026-04-16 05:58:52,169 p=3261 u=ubuntu n=ansible INFO| ok: [db01]
+2026-04-16 05:58:52,175 p=3261 u=ubuntu n=ansible INFO| TASK [create a database] ***************************************************************************************************************************************************
+2026-04-16 05:58:52,816 p=3261 u=ubuntu n=ansible INFO| ok: [db01]
+2026-04-16 05:58:52,821 p=3261 u=ubuntu n=ansible INFO| TASK [print value of dbout variable] ***************************************************************************************************************************************
+2026-04-16 05:58:52,842 p=3261 u=ubuntu n=ansible INFO| ok: [db01] => {
+    "dbout": {
+        "attributes": {},
+        "changed": false,
+        "failed": false,
+        "msg": "User unchanged",
+        "password_changed": false,
+        "user": "accounts"
+    }
+}
+2026-04-16 05:58:52,846 p=3261 u=ubuntu n=ansible INFO| TASK [name of database created] ********************************************************************************************************************************************
+2026-04-16 05:58:52,867 p=3261 u=ubuntu n=ansible INFO| ok: [db01] => {
+    "msg": "The name of database created is \"vprofile\""
+}
+2026-04-16 05:58:52,871 p=3261 u=ubuntu n=ansible INFO| TASK [name of database user created] ***************************************************************************************************************************************
+2026-04-16 05:58:52,891 p=3261 u=ubuntu n=ansible INFO| ok: [db01] => {
+    "dbuser": "accounts"
+}
+2026-04-16 05:58:52,892 p=3261 u=ubuntu n=ansible INFO| PLAY RECAP *****************************************************************************************************************************************************************
+2026-04-16 05:58:52,892 p=3261 u=ubuntu n=ansible INFO| db01                       : ok=9    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   

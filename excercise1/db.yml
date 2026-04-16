@@ -1,0 +1,20 @@
+---
+- name: Understanding users
+  hosts: all
+  become: yes
+  vars_files:
+    - /home/ubuntu/vars.yml
+  tasks:
+    - name: create users
+      ansible.builtin.user:
+        name: "{{USER}}"
+        comment: "{{COMM}}"
+      register: usrout
+    - name: printing variable usrout name
+      debug:
+        var: usrout.name
+    - name: printing variable usrout comment
+      debug:
+        var: usrout.comment
+
+    
