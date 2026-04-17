@@ -1,0 +1,21 @@
+---
+- name: creating keypair
+  hosts: localhost
+  tasks:
+    - name: create a key pair
+      ec2_key:
+        name: sample
+        region: us-east-1
+      register: keyout
+    - name: print variable keyout
+      debug:
+        var: keyout
+    - name: save private key
+      copy:
+        content: "{{keyout.key.private_key}}"
+        dest: ./sample.pem
+      when: keyout.changed
+    - name: private key saved
+      debug:
+        msg: " content of private key is saved"
+      when: keyout.changed

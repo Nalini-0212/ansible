@@ -1,0 +1,36 @@
+---
+- name: creating keypair
+  hosts: localhost
+  tasks:
+    - name: create a key pair
+      ec2_key:
+        name: sample
+        region: us-east-1
+      register: keyout
+    - name: print variable keyout
+      debug:
+        var: keyout
+    - name: save private key
+      copy:
+        content: "{{keyout.key.private_key}}"
+        dest: ./sample.pem
+      when: keyout.changed
+    - name: private key saved
+      debug:
+        msg: " content of private key is saved"
+      when: keyout.changed
+    - name: start the ec2 instance
+      amazon.aws.ec2_instance:
+        name: "vprofile-web03"
+        key_name: "{{keyout.key.name}}"
+        security_group: default
+        image_id: ami-098e39bafa7e7303d
+        region: us-east-1
+        instance_type: 't2.micro'
+        network:
+          assign_ip_address: 'True'
+        exact_count: 1
+        state: running
+        wait: 'True'
+        tags:
+          Environment: testing
