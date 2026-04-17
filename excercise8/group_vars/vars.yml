@@ -1,0 +1,12 @@
+packages:
+     - chrony
+     - git
+     - wget
+     - zip
+     - unzip
+users:
+  - nalini
+  - nandhini
+  - mithran
+  - pinky
+

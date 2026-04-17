@@ -1,0 +1,70 @@
+#SPDX-License-Identifier: MIT-0
+---
+# tasks file for post-install
+- name: install NTP service on Ubuntu
+  ansible.builtin.apt:
+    name: "{{packages}}"
+    state: present
+    update_cache: yes
+  when: ansible_facts.distribution== "Ubuntu"
+- name: install NTP service on Amazon Linux
+  ansible.builtin.yum:
+    name: "{{packages}}"
+    state: present
+    update_cache: yes
+  when: ansible_facts.distribution== "Amazon"
+
+- name: Banner file
+  ansible.builtin.copy:
+    content: " # this server is managed by Ansible no manual changes allowed"
+    dest: /etc/motd
+- name: create a folder
+  ansible.builtin.file:
+    path: "{{mydir}}"
+    state: directory
+
+- name: start NTP service on Ubuntu
+  ansible.builtin.service:
+    name: chrony
+    state: started
+    enabled: yes
+  when: ansible_facts.distribution== "Ubuntu"
+
+- name: start NTP service on Amazon Linux
+  ansible.builtin.service:
+    name: chronyd
+    state: started
+    enabled: yes
+  when: ansible_facts.distribution== "Amazon"
+
+- name: deploy ntp agent conf on ubuntu
+  ansible.builtin.template:
+    src: ntpconf_ubuntu.j2
+    dest: /etc/chrony/chrony.conf
+    backup: yes
+  when: ansible_facts.distribution== "Ubuntu"
+  notify:
+    - restart NTP service on Ubuntu
+- name: deploy ntp agent conf on amazon linux
+  ansible.builtin.template:
+    src: ntpconf_amazon.j2
+    dest: /etc/chrony.conf
+    backup: yes
+  when: ansible_facts.distribution== "Amazon"
+  notify:
+    - restart NTP service on Amazon Linux
+- name: create a user
+  ansible.builtin.user:
+    name: nalini
+    comment: add from playbook
+    state: present
+  notify:
+    - copy file
+
+- name: Dump a file
+  ansible.builtin.copy:
+    src: myfile.txt
+    dest: /tmp/myfile.txt
+
+
+

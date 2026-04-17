@@ -1,0 +1,21 @@
+#SPDX-License-Identifier: MIT-0
+---
+# handlers file for post-install
+- name: restart NTP service on Ubuntu
+  ansible.builtin.service:
+    name: chrony
+    state: restarted
+    enabled: yes
+  when: ansible_facts.distribution== "Ubuntu"
+
+- name: restart NTP service on Amazon Linux
+  ansible.builtin.service:
+    name: chronyd
+    state: restarted
+    enabled: yes
+  when: ansible_facts.distribution== "Amazon"
+- name: copy file
+  ansible.builtin.copy:
+    content: " this is new file"
+    dest: /opt/new.txt
+

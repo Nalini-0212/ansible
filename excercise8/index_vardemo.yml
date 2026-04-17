@@ -1,0 +1,16 @@
+---
+- name: understanding index_var via loop control
+  hosts: all
+  become: yes
+  tasks:
+    - name: using debug module
+      ansible.builtin.debug:
+        msg: "{{item}} with index {{my_idx}}"
+      loop:
+        - apple
+        - orange
+        - banana
+        - pineapple
+        - grapes
+      loop_control:
+        index_var: my_idx
